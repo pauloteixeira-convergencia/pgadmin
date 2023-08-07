@@ -11,12 +11,12 @@ services:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     networks:
-      hmmg-cidadao:
+      redepadrao:
         ipv4_address: 10.224.0.12
 
 networks:
-  hmmg-cidadao:
-    name: hmmg-cidadao
+  redepadrao:
+    name: redepadrao
     ipam:
       config:
         - subnet: 10.224.0.0/23
