@@ -12,7 +12,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     networks:
       hmmg-cidadao:
-        ipv4_address: 10.224.0.4
+        ipv4_address: 10.224.0.12
 
 networks:
   hmmg-cidadao:
