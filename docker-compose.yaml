@@ -3,7 +3,7 @@ version: '3.9'
 services:
   pgadmin:
     container_name: pgadmin
-    image: dpage/pgadmin4:2.0
+    image: dpage/pgadmin4:7
     restart: always
     ports:
       - '${PGADMIN_PORT}:80'
