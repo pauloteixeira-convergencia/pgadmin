@@ -1,6 +1,20 @@
 version: '3.9'
 
-services:
+services:        
+  postgreSQL:
+    image: postgres:15.3
+    container_name: postgreSQL
+    hostname: postgreSQL
+    environment:
+      POSTGRES_DB: default_base
+      POSTGRES_USER: suporte
+      POSTGRES_PASSWORD: Chnm4rMG
+    networks:
+      redepadrao:
+        ipv4_address: '${PG_IP}'
+    volumes:
+      - database:/var/lib/postgresql/data
+
   pgadmin:
     container_name: pgadmin
     image: dpage/pgadmin4:7
@@ -12,11 +26,12 @@ services:
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
     networks:
       redepadrao:
-        ipv4_address: 10.224.0.12
+        ipv4_address: '${PGADMIN_IP}'
+
+volumes:
+  database:
 
 networks:
   redepadrao:
     name: redepadrao
-    ipam:
-      config:
-        - subnet: 10.224.0.0/23
+    external: true
